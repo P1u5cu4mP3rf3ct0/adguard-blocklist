@@ -9,8 +9,6 @@
 
 **Una lista completa de filtros para AdGuard que bloquea anuncios, rastreadores y contenido promocional en las principales plataformas sociales y de streaming.**
 
-[📥 Descargar](#instalación) • [🔧 Configuración](#configuración) • [🐛 Reportar Issues](#contribuir) • [📖 Documentación](#documentación)
-
 </div>
 
 ---
@@ -208,19 +206,10 @@ Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](L
 - [EasyList](https://easylist.to/) por la inspiración en sintaxis de filtros
 - Contribuidores de la comunidad por reportar bugs y sugerencias
 
-## 💡 Donaciones
-
-Si este proyecto te resulta útil, considera hacer una donación:
-
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/tu-usuario)
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/tu-usuario)
-
 ---
 
 <div align="center">
 
 **⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub! ⭐**
-
-Made with ❤️ by [Tu Nombre](https://github.com/tu-usuario)
 
 </div>
