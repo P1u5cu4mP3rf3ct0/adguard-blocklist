@@ -1,215 +1,190 @@
-# 🚫 Social Media AdBlock Filters
+# 🛡️ AdGuard Blocklist — Social Media & Streaming
 
-<div align="center">
+Filtros para AdGuard que bloquean anuncios, rastreadores y contenido promocional en las principales plataformas sociales y de streaming.
 
-![Version](https://img.shields.io/badge/version-1.0-blue.svg)
-![Platform](https://img.shields.io/badge/platform-AdGuard-green.svg)
-![License](https://img.shields.io/badge/license-MIT-yellow.svg)
-![Filters](https://img.shields.io/badge/filters-400+-red.svg)
-
-**Una lista completa de filtros para AdGuard que bloquea anuncios, rastreadores y contenido promocional en las principales plataformas sociales y de streaming.**
-
-</div>
+![Version](https://img.shields.io/badge/Version-2.0-blue?style=flat-square)
+![Filters](https://img.shields.io/badge/Filtros-700%2B-orange?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Plataformas](https://img.shields.io/badge/Plataformas-10-purple?style=flat-square)
 
 ---
 
-## ✨ Características
+## ✨ ¿Qué bloquea?
 
-- 🎯 **400+ filtros optimizados** para máxima efectividad
-- 🎵 **YouTube & Spotify** - Bloquea anuncios de video, audio y rastreadores
-- 🐦 **Twitter/X** - Elimina tweets promocionados y analytics
-- 📸 **Instagram** - Oculta contenido patrocinado en feed, stories y reels
-- 🔒 **Privacidad avanzada** - Bloquea rastreadores y analytics
-- ⚡ **Rendimiento optimizado** - Filtros específicos sin falsos positivos
+| Plataforma | Anuncios | Rastreadores | Contenido Promocional |
+|---|:---:|:---:|:---:|
+| YouTube | ✅ | ✅ | ✅ |
+| Spotify | ✅ | ✅ | ✅ |
+| TikTok | ✅ | ✅ | ✅ |
+| Instagram | ✅ | ✅ | ✅ |
+| Twitter / X | ✅ | ✅ | ✅ |
+| Facebook / Meta | ✅ | ✅ | ✅ |
+| Twitch | ✅ | ✅ | ✅ |
+| Reddit | ✅ | ✅ | ✅ |
+| LinkedIn | ✅ | ✅ | ✅ |
+| Pinterest | ✅ | ✅ | ✅ |
+| Snapchat | ✅ | ✅ | ✅ |
 
-## 🎯 Plataformas Soportadas
+Además de rastreadores cross-site generales: Google Analytics, Meta Pixel, Hotjar, Mixpanel, Amplitude, Segment, Criteo, Taboola, Outbrain y más de 50 redes publicitarias.
 
-| Plataforma | Anuncios | Analytics | Contenido Promocional | Estado |
-|------------|----------|-----------|----------------------|---------|
-| **YouTube** | ✅ | ✅ | ✅ | Completamente soportado |
-| **Spotify** | ✅ | ✅ | ✅ | Completamente soportado |
-| **Twitter/X** | ✅ | ✅ | ✅ | Completamente soportado |
-| **Instagram** | ✅ | ✅ | ✅ | Completamente soportado |
+---
 
 ## 📥 Instalación
 
-### Método 1: Importación directa (Recomendado)
+### Método 1 — Suscripción directa (recomendado)
+
+Añade esta URL en **AdGuard → Filtros → Filtros personalizados → Agregar filtro personalizado**:
+
 ```
-https://raw.githubusercontent.com/tu-usuario/social-media-adblock-filters/main/social-media-filters.txt
+https://raw.githubusercontent.com/P1u5cu4mP3rf3ct0/adguard-blocklist/main/social-media-filters.txt
 ```
 
-### Método 2: Instalación manual
+### Método 2 — Manual
+
 1. Descarga el archivo `social-media-filters.txt`
-2. Abre AdGuard → **Filtros** → **Filtros personalizados**
+2. Abre AdGuard → Filtros → Filtros personalizados
 3. Haz clic en **Agregar filtro personalizado**
 4. Selecciona **Importar desde archivo** y elige el archivo descargado
-5. ✅ Activa el filtro
+5. Activa el filtro
 
-### Método 3: Suscripción automática
-Haz clic en este enlace para añadir automáticamente los filtros:
+### Método 3 — Enlace de suscripción rápida
+
 ```
-adguard:add?url=https://raw.githubusercontent.com/tu-usuario/social-media-adblock-filters/main/social-media-filters.txt
-```
-
-## 🔧 Configuración
-
-### Configuración Básica
-- ✅ Asegúrate de que el filtro esté **activado**
-- ✅ Configura las **actualizaciones automáticas** (24h recomendado)
-- ✅ Verifica que AdGuard esté funcionando en las plataformas objetivo
-
-### Configuración Avanzada
-Para usuarios expertos que quieran personalizar los filtros:
-
-```adblock
-! Desactivar filtros específicos (añadir al inicio)
-@@||youtube.com/api/stats/watchtime$xmlhttprequest
-
-! Filtros personalizados adicionales
-||tu-dominio-personalizado.com^
+adguard:add?url=https://raw.githubusercontent.com/P1u5cu4mP3rf3ct0/adguard-blocklist/main/social-media-filters.txt
 ```
 
-## 🛠️ Compatibilidad
-
-| Cliente AdGuard | Compatibilidad | Notas |
-|-----------------|---------------|-------|
-| **AdGuard para Windows** | ✅ Completa | Funcionalidad completa |
-| **AdGuard para Mac** | ✅ Completa | Funcionalidad completa |
-| **AdGuard para Android** | ✅ Completa | Funcionalidad completa |
-| **AdGuard para iOS** | ✅ Completa | Funcionalidad completa |
-| **Extensión AdGuard** | ✅ Completa | Funcionalidad completa |
-| **AdGuard Home** | ✅ Parcial | Solo filtros DNS |
-
-## 📊 Estadísticas de Bloqueo
-
-### YouTube
-- 🎬 **Anuncios de video**: Pre-roll, mid-roll, post-roll
-- 📱 **YouTube Shorts**: Anuncios en contenido vertical
-- 📊 **Analytics**: Métricas de reproducción y engagement
-- 🎯 **Contenido promocional**: Videos patrocinados
-
-### Spotify
-- 🎵 **Anuncios de audio**: Entre canciones y podcasts
-- 🖼️ **Anuncios visuales**: Banners y overlays
-- 📈 **Rastreadores**: Datos de escucha y comportamiento
-- 💰 **Promociones Premium**: Botones y pop-ups
-
-### Twitter/X
-- 🐦 **Tweets promocionados**: Contenido patrocinado en timeline
-- 📈 **Trends promocionados**: Hashtags pagados
-- 🎥 **Anuncios de video**: Pre-roll en contenido multimedia
-- 🔍 **Analytics**: Métricas de engagement y conversión
-
-### Instagram
-- 📷 **Posts patrocinados**: Contenido promocional en feed
-- 📚 **Stories ads**: Anuncios entre historias
-- 🎬 **Reels promocionados**: Contenido publicitario en reels
-- 🛍️ **Shopping ads**: Anuncios de productos
-
-## 🐛 Solución de Problemas
-
-### Problemas Comunes
-
-**❓ Los anuncios siguen apareciendo**
-- Verifica que el filtro esté activado
-- Fuerza la actualización del filtro
-- Limpia la caché del navegador
-
-**❓ Problemas de reproducción**
-- Desactiva temporalmente el filtro
-- Reporta el problema con detalles específicos
-- Usa las reglas de whitelist incluidas
-
-**❓ Contenido legítimo bloqueado**
-- Revisa los logs de AdGuard
-- Añade excepciones personalizadas
-- Reporta falsos positivos
-
-### Logs y Debugging
-Para obtener información de debug:
-1. Abre AdGuard → **Configuración** → **General**
-2. Activa **Modo de debugging**
-3. Reproduce el problema
-4. Exporta los logs desde **Configuración** → **Soporte**
-
-## 🤝 Contribuir
-
-¡Las contribuciones son bienvenidas! Puedes ayudar de varias formas:
-
-### 🐛 Reportar Bugs
-- Usa el template de issues
-- Incluye capturas de pantalla
-- Proporciona información del sistema
-
-### ✨ Sugerir Mejoras
-- Nuevas plataformas a soportar
-- Filtros adicionales
-- Optimizaciones de rendimiento
-
-### 🔧 Desarrollo
-```bash
-# Fork el repositorio
-git clone https://github.com/tu-usuario/social-media-adblock-filters.git
-
-# Crea una rama para tu feature
-git checkout -b feature/nueva-funcionalidad
-
-# Realiza tus cambios
-# Testa los filtros
-
-# Commit y push
-git commit -m "Añadir filtros para TikTok"
-git push origin feature/nueva-funcionalidad
-
-# Crea un Pull Request
-```
-
-## 📖 Documentación
-
-### Sintaxis de Filtros
-Los filtros utilizan la sintaxis estándar de AdGuard:
-
-```adblock
-! Comentario
-||dominio.com^                    # Bloquea dominio completo
-||dominio.com/path/*             # Bloquea path específico
-dominio.com##.clase              # Oculta elemento CSS
-@@||dominio.com^                 # Excepción (whitelist)
-```
-
-### Estructura del Archivo
-```
-social-media-filters.txt
-├── Header (información del filtro)
-├── YouTube (anuncios, analytics, elementos UI)
-├── Spotify (audio ads, rastreadores, promociones)
-├── Twitter/X (tweets promocionados, analytics)
-├── Instagram (contenido patrocinado, stories ads)
-└── Dominios generales (redes publicitarias)
-```
-
-## 📝 Changelog
-
-### v1.0 (2025-06-06)
-- ✨ Lanzamiento inicial
-- 🎯 400+ filtros para 4 plataformas principales
-- 📱 Soporte completo para móviles y desktop
-- 🔒 Filtros avanzados de privacidad
-
-## 📄 Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
-
-## 🙏 Agradecimientos
-
-- [AdGuard](https://adguard.com/) por la excelente herramienta de bloqueo
-- [EasyList](https://easylist.to/) por la inspiración en sintaxis de filtros
-- Contribuidores de la comunidad por reportar bugs y sugerencias
+> ✅ Se recomienda activar las actualizaciones automáticas cada 24h en la configuración del filtro.
 
 ---
 
-<div align="center">
+## 🔗 Listas externas recomendadas
 
-**⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub! ⭐**
+Este archivo bloquea elementos específicos de cada plataforma, pero para **máxima cobertura** se recomienda combinarlo con estas listas externas.
 
-</div>
+### Nivel base — para todos los usuarios
+
+| Lista | URL | Descripción |
+|---|---|---|
+| Hagezi Multi Normal | [Enlace](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt) | ~300k dominios, sin falsos positivos |
+| OISD Basic | [Enlace](https://abp.oisd.nl/basic/) | Muy estable y mantenida activamente |
+| EasyList | [Enlace](https://easylist.to/easylist/easylist.txt) | Estándar de anuncios web |
+| EasyPrivacy | [Enlace](https://easylist.to/easylist/easyprivacy.txt) | Estándar de rastreadores web |
+| Hagezi Native TikTok Extended | [Enlace](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.extended.txt) | 453 reglas específicas para rastreadores ByteDance |
+
+### Nivel avanzado
+
+| Lista | URL | Descripción |
+|---|---|---|
+| Hagezi Multi Pro | [Enlace](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt) | ~460k dominios, algún falso positivo ocasional |
+| OISD Big | [Enlace](https://abp.oisd.nl/big/) | Versión completa de OISD |
+| AdGuard Tracking Protection | [Enlace](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt) | Filtro oficial de rastreo de AdGuard |
+
+### Malware y phishing
+
+| Lista | URL | Descripción |
+|---|---|---|
+| Hagezi Threat Intelligence | [Enlace](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt) | Dominios maliciosos activos |
+| URLHaus | [Enlace](https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh.txt) | URLs de malware activas |
+| AdGuard DNS Filter | [Enlace](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt) | Filtro DNS oficial de AdGuard |
+
+### Cookies y elementos molestos
+
+| Lista | URL | Descripción |
+|---|---|---|
+| AdGuard Annoyances | [Enlace](https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt) | Popups, banners de cookies, notificaciones |
+| I Don't Care About Cookies | [Enlace](https://www.i-dont-care-about-cookies.eu/abp/) | Elimina avisos de cookies |
+| Fanboy Annoyance | [Enlace](https://easylist.to/easylist/fanboy-annoyance.txt) | Elementos molestos generales |
+
+### Para usuarios muy avanzados ⚠️ *(puede romper cosas)*
+
+| Lista | URL | Descripción |
+|---|---|---|
+| Hagezi Multi Pro++ | [Enlace](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt) | Muy agresivo, ~640k dominios |
+| ph00lt0 Blocklist | [Enlace](https://raw.githubusercontent.com/ph00lt0/blocklist/master/blocklist.txt) | Prioriza privacidad total sobre funcionalidad |
+
+---
+
+## 📊 Qué se bloquea en cada plataforma
+
+### 🎬 YouTube
+Pre-roll, mid-roll y post-roll, anuncios en Shorts, overlays durante el video, botones de skip, contenido promocionado en el feed, rastreadores de analytics y métricas de reproducción, popups de Premium.
+
+### 🎵 Spotify
+Anuncios de audio entre canciones, anuncios en podcasts, banners y overlays visuales, rastreadores de comportamiento de escucha, segmentación demográfica, test A/B, botones de upsell a Premium.
+
+### 📱 TikTok
+Anuncios en el feed, anuncios en TikTok Live, publicidad en la red Pangle (ByteDance), 30+ dominios de rastreo nativos de ByteDance, dominios CDN de publicidad.
+
+### 📸 Instagram
+Contenido patrocinado en feed, ads en Stories y Reels, anuncios de Shopping, rastreadores de conversión y comportamiento, servicios de terceros de Meta.
+
+### 🐦 Twitter / X
+Tweets promocionados, trends pagados, pre-roll en vídeos, anuncios en búsqueda, rastreadores de conversión y audiencia.
+
+### 👥 Facebook / Meta
+Anuncios en el feed, Meta Pixel, seguimiento cross-site, publicidad del Audience Network.
+
+### 🎮 Twitch
+Anuncios pre-roll en streams, banners de display, rastreadores Spade y Countess.
+
+### 💬 Reddit
+Posts promocionados en el feed, rastreadores de eventos y píxeles.
+
+### 💼 LinkedIn
+Contenido patrocinado, anuncios InMail, tracking de LinkedIn Insight Tag, Bing Ads integrado.
+
+### 📌 Pinterest
+Pines promocionados, banners de publicidad, píxel de conversión de Pinterest.
+
+### 👻 Snapchat
+Snaps patrocinados, píxel de Snapchat, rastreadores de conversión.
+
+---
+
+## 🔧 Solución de problemas
+
+**Los anuncios siguen apareciendo**
+- Verifica que el filtro está activado y actualizado
+- Limpia la caché del navegador
+- Asegúrate de que las listas externas recomendadas también están activas
+
+**Algo no funciona correctamente**
+- Desactiva temporalmente el filtro para confirmar que es la causa
+- [Abre un issue](https://github.com/P1u5cu4mP3rf3ct0/adguard-blocklist/issues) indicando qué plataforma falla y en qué consiste el problema
+
+**Añadir excepciones personalizadas**
+```
+@@||dominio-que-quieres-permitir.com^
+```
+
+---
+
+## 📖 Sintaxis de filtros (referencia rápida)
+
+```
+! Comentario
+||dominio.com^                     Bloquea dominio completo
+||dominio.com/ruta/*               Bloquea ruta específica
+dominio.com##.clase-css            Oculta elemento por clase CSS
+dominio.com##[data-testid="id"]    Oculta elemento por atributo
+@@||dominio.com^                   Excepción — permite dominio
+$xmlhttprequest                    Solo peticiones AJAX
+$media                             Solo recursos de medios
+$domain=sitio.com                  Solo en ese dominio
+```
+
+Documentación completa: [AdGuard Filtering Rules Syntax](https://adguard.com/kb/general/ad-filtering/create-own-filters/)
+
+---
+
+## 📄 Licencia
+
+[MIT](https://github.com/P1u5cu4mP3rf3ct0/zabbix-templates/blob/main/LICENSE) — Libre para usar, modificar y distribuir. Se agradece dar crédito al autor.
+
+---
+
+## 👤 Autor
+
+Creado y mantenido por [P1u5cu4mP3rf3ct0](https://github.com/P1u5cu4mP3rf3ct0).
+
+Si te ha sido útil, considera dejar una ⭐ en el repositorio.
