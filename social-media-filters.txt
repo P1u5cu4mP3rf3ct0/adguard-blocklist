@@ -1,41 +1,130 @@
-! Título: Lista de Bloqueo YouTube y Spotify
-! Descripción: Bloquea anuncios, rastreadores y elementos no deseados en YouTube y Spotify
-! Versión: 1.0
+! Title: Social Media & Streaming — Ad/Tracker Blocklist
+! Description: Bloquea anuncios, rastreadores y elementos no deseados en YouTube, Spotify, TikTok, Instagram, Twitter/X, Facebook, Twitch, Reddit, LinkedIn, Pinterest, Snapchat y más.
+! Version: 2.0
 ! Última actualización: 2025
+! Autor: P1u5cu4mP3rf3ct0 (https://github.com/P1u5cu4mP3rf3ct0/adguard-blocklist)
+! Licencia: MIT
+! Issues/Falsos positivos: https://github.com/P1u5cu4mP3rf3ct0/adguard-blocklist/issues
+!
+! ============================================================
+! LISTAS EXTERNAS — SUSCRIBIR EN ADGUARD (OBLIGATORIO)
+! ============================================================
+! Este archivo es un complemento de filtros específicos para
+! redes sociales. Para una cobertura completa, suscribe también
+! las siguientes listas externas en AdGuard → Filtros → Personalizados.
+!
+! ── NIVEL BASE (recomendado para todos) ──────────────────────
+!
+! Hagezi Multi Normal (~300k dominios, sin falsos positivos):
+!   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt
+!
+! OISD Basic (lista bien mantenida, muy estable):
+!   https://abp.oisd.nl/basic/
+!
+! EasyList (anuncios web general):
+!   https://easylist.to/easylist/easylist.txt
+!
+! EasyPrivacy (rastreadores general):
+!   https://easylist.to/easylist/easyprivacy.txt
+!
+! ── NIVEL AVANZADO ───────────────────────────────────────────
+!
+! Hagezi Multi Pro (más agresivo, algún falso positivo raro):
+!   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+!
+! OISD Big (versión más completa de OISD):
+!   https://abp.oisd.nl/big/
+!
+! AdGuard Tracking Protection (rastreadores):
+!   https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt
+!
+! ── TIKTOK (específico) ──────────────────────────────────────
+!
+! Hagezi Native TikTok Extended (453 reglas rastreadores ByteDance):
+!   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.extended.txt
+!
+! ── MALWARE Y PHISHING ───────────────────────────────────────
+!
+! Hagezi Threat Intelligence Feeds:
+!   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+!
+! URLHaus (URLs maliciosas activas):
+!   https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh.txt
+!
+! AdGuard DNS Filter:
+!   https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+!
+! Dan Pollock's Hosts:
+!   https://someonewhocares.org/hosts/zero/hosts
+!
+! ── MOLESTOS / COOKIES / POPUPS ─────────────────────────────
+!
+! AdGuard Annoyances:
+!   https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
+!
+! Fanboy Annoyance List:
+!   https://easylist.to/easylist/fanboy-annoyance.txt
+!
+! I Don't Care About Cookies:
+!   https://www.i-dont-care-about-cookies.eu/abp/
+!
+! ── PARA USUARIOS MUY AVANZADOS (puede romper cosas) ────────
+!
+! Hagezi Multi Pro++ (~460k dominios):
+!   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt
+!
+! ph00lt0 Blocklist (muy agresivo, prioriza privacidad total):
+!   https://raw.githubusercontent.com/ph00lt0/blocklist/master/blocklist.txt
+!
+! ============================================================
 
-! ========== YOUTUBE ==========
 
-! Anuncios de video
+
+! ============================================================
+! ██╗   ██╗ ██████╗ ██╗   ██╗████████╗██╗   ██╗██████╗ ███████╗
+! ╚██╗ ██╔╝██╔═══██╗██║   ██║╚══██╔══╝██║   ██║██╔══██╗██╔════╝
+!  ╚████╔╝ ██║   ██║██║   ██║   ██║   ██║   ██║██████╔╝█████╗
+!   ╚██╔╝  ██║   ██║██║   ██║   ██║   ██║   ██║██╔══██╗██╔══╝
+!    ██║   ╚██████╔╝╚██████╔╝   ██║   ╚██████╔╝██████╔╝███████╗
+!    ╚═╝    ╚═════╝  ╚═════╝    ╚═╝    ╚═════╝ ╚═════╝ ╚══════╝
+! ============================================================
+
+! --- Anuncios pre-roll, mid-roll, post-roll (red) ---
 ||googlevideo.com/videoplayback*&ump=*$media
 ||googlevideo.com/videoplayback*&c=WEB*$media
+||googlevideo.com/videoplayback*ad_type=*$media
+||googlevideo.com/videoplayback*&source=youtube&*ad*$media
 ||youtube.com/api/stats/ads$xmlhttprequest
+||youtube.com/api/stats/ads?*$xmlhttprequest
 ||youtube.com/get_video_info*&el=adunit$xmlhttprequest
+||youtube.com/get_video_info*&ad_*$xmlhttprequest
+||youtube.com/get_video_info*&advertiser_id*$xmlhttprequest
+||youtube.com/get_midroll_info$xmlhttprequest
 ||youtube.com/ptracking$xmlhttprequest
+||youtube.com/pcs/click$xmlhttprequest
 ||youtube.com/pagead/$script,subdocument
+||youtube.com/pagead/interaction/$xmlhttprequest
+||youtube.com/api/timedtext?*&ad_*$xmlhttprequest
+||youtube.com/youtubei/v1/player/ad_*$xmlhttprequest
+||youtube.com/youtubei/v1/next?*adunit*$xmlhttprequest
+||youtube.com/youtubei/v1/browse?*promoted*$xmlhttprequest
+||youtube.com/youtubei/v1/guide?*ad_*$xmlhttprequest
+||youtube.com/youtubei/v1/player?*adunit*$xmlhttprequest
+||youtube.com/youtubei/v1/next?*adsEnabled*$xmlhttprequest
+||youtube.com/youtubei/v1/player/impression$xmlhttprequest
+||youtube.com/api/stats/watchtime?*ad_*$xmlhttprequest
+||youtube.com/api/stats/delayplay$xmlhttprequest
+||youtube.com/csi_204?*&ad*$image
+||youtube.com/api/stats/atr$xmlhttprequest
+||googleads.g.doubleclick.net/pagead/$script,subdocument
+||googleads.g.doubleclick.net/mads/$script
 ||googleadservices.com^
 ||googlesyndication.com^
 ||doubleclick.net^
-||googlevideo.com/videoplayback*ad_type=*$media
-||youtube.com/get_midroll_info$xmlhttprequest
-||youtube.com/api/stats/atr$xmlhttprequest
-||youtube.com/youtubei/v1/next?*adunit*$xmlhttprequest
-||youtube.com/pcs/click$xmlhttprequest
-||googleads.g.doubleclick.net/pagead/$script,subdocument
-||youtube.com/api/timedtext?*&ad_*$xmlhttprequest
-||youtube.com/youtubei/v1/player/ad_*$xmlhttprequest
-||youtube.com/get_video_info*&ad_*$xmlhttprequest
-||youtube.com/api/stats/ads?*$xmlhttprequest
-||googlevideo.com/videoplayback*&source=youtube&*ad*$media
-||youtube.com/pagead/interaction/$xmlhttprequest
-||youtube.com/youtubei/v1/browse?*promoted*$xmlhttprequest
-||youtube.com/csi_204?*&ad*$image
-||youtube.com/api/stats/delayplay$xmlhttprequest
-||googleads.g.doubleclick.net/mads/$script
-||youtube.com/get_video_info*&advertiser_id*$xmlhttprequest
-||youtube.com/youtubei/v1/guide?*ad_*$xmlhttprequest
-||youtube.com/api/stats/watchtime?*ad_*$xmlhttprequest
+||ads.youtube.com^
+||studio.youtube.com/adunit*$xmlhttprequest
 
-! Elementos de anuncios en la interfaz
+! --- Elementos de anuncios en la interfaz ---
 youtube.com##ytd-display-ad-renderer
 youtube.com##ytd-promoted-sparkles-web-renderer
 youtube.com##ytd-ad-slot-renderer
@@ -53,7 +142,6 @@ youtube.com##.ytp-ad-player-overlay
 youtube.com##.video-ads
 youtube.com##.ytd-compact-promoted-item-renderer
 youtube.com##ytd-rich-item-renderer:has([class*="ad"])
-youtube.com##ytd-promoted-sparkles-text-search-renderer
 youtube.com##ytd-search-ad-renderer
 youtube.com##ytd-video-masthead-ad-v3-renderer
 youtube.com##ytd-primetime-promo-renderer
@@ -64,52 +152,46 @@ youtube.com##ytd-brand-video-shelf-renderer
 youtube.com##ytd-companion-slot-renderer
 youtube.com##[class*="advertisement"]
 youtube.com##[data-ad-unit-path]
-youtube.com##.ytp-videowall-still-info-title:has-text(/Ad|Sponsored/)
 youtube.com##ytd-in-feed-ad-layout-renderer
 youtube.com##ytd-unlimited-offer-module-renderer
 youtube.com##.masthead-ad-control
 youtube.com###player-ads
 youtube.com##.ad-container
 youtube.com##[class*="promoted-item"]
-youtube.com##.ytd-promoted-video-renderer
 youtube.com##ytd-action-companion-ad-renderer
 youtube.com##ytd-player-legacy-desktop-watch-ads-renderer
 youtube.com##ytd-engagement-panel-section-list-renderer[target-id*="ad"]
 youtube.com##.iv-branding
-youtube.com##.annotation-type-custom
 youtube.com##ytd-merch-shelf-renderer
-youtube.com##ytd-video-owner-renderer .ytd-subscribe-button-renderer
 youtube.com##.ytp-suggested-action
-youtube.com##ytd-compact-autoplay-renderer .ytd-button-renderer:has-text(/Premium/)
 youtube.com##ytd-popup-container:has([class*="ad"])
-youtube.com##.ytd-promoted-sparkles-web-renderer
 youtube.com##ytd-rich-shelf-renderer:has([class*="ad"])
+youtube.com##ytd-ad-slot-renderer + ytd-item-section-renderer
+youtube.com##tp-yt-paper-dialog:has(ytd-ad-slot-renderer)
+youtube.com##ytd-video-masthead-ad-v4-renderer
+youtube.com##ytd-video-masthead-ad-v5-renderer
 
-! Anuncios pre-roll, mid-roll y post-roll
+! --- Botones skip / overlays de anuncio durante el video ---
 youtube.com##.ytp-ad-skip-button-container
+youtube.com##.ytp-ad-skip-button-slot
+youtube.com##.ytp-ad-skip-button-text
+youtube.com##.ytp-ad-skip-button-text-centered
 youtube.com##.ytp-ad-overlay-slot
 youtube.com##.ytp-ad-image-overlay
 youtube.com##.ytp-ad-text
 youtube.com##.ytp-ad-duration-remaining
 youtube.com##.ytp-ad-preview-container
-youtube.com##.ytp-ad-overlay-container
 youtube.com##.ytp-ad-player-overlay-instream-info
 youtube.com##.ytp-ad-overlay-image
 youtube.com##.ytp-ad-overlay-close-button
-youtube.com##.ytp-ad-text-overlay
-youtube.com##.ytp-ad-overlay-slot .ytp-ad-overlay-container
 youtube.com##.ytp-ad-persistent-progress-bar-container
-youtube.com##.ytp-ad-skip-button-text
 youtube.com##.ytp-ad-button-icon
 youtube.com##.ytp-ad-enforcer-text
-youtube.com##.ytp-ad-skip-button-text-centered
 youtube.com##.ytp-ad-button-text
 youtube.com##.ytp-ad-simple-ad-badge
 youtube.com##.ytp-ad-survey
 youtube.com##.ytp-ad-overlay-close-container
 youtube.com##.ytp-ad-hover-text-button
-youtube.com##.ytp-ad-skip-button-slot
-youtube.com##.ytp-ad-overlay-duration-text
 youtube.com##.ytp-ad-progress-list
 youtube.com##.ytp-ad-progress-linear
 youtube.com##.ytp-ad-clickthrough-overlay-cta
@@ -117,8 +199,9 @@ youtube.com##.ytp-ad-visit-advertiser-button
 youtube.com##.ytp-ad-overlay-link
 youtube.com##.ytp-ad-overlay-text
 youtube.com##.ytp-ad-overlay-actions-container
+youtube.com##.ytp-ad-overlay-duration-text
 
-! Shorts con anuncios
+! --- YouTube Shorts con anuncios ---
 youtube.com##ytd-reel-video-renderer[is-ad]
 youtube.com##ytd-ad-slot-renderer:has(ytd-promoted-sparkles-web-renderer)
 youtube.com##ytd-reel-shelf-renderer:has([class*="ad"])
@@ -130,58 +213,189 @@ youtube.com##ytd-vertical-list-renderer:has([is-ad])
 youtube.com##ytd-shorts-grid-renderer:has([is-ad])
 youtube.com##ytd-reel-video-renderer .overlay-icon[class*="ad"]
 
-! Rastreadores y analytics de YouTube
+! --- Promociones Premium de YouTube ---
+youtube.com##ytd-mealbar-promo-renderer
+youtube.com##ytd-popup-container:has(ytd-mealbar-promo-renderer)
+youtube.com##tp-yt-paper-dialog:has([class*="premium"])
+youtube.com##ytd-button-renderer.style-primary:has-text(/Premium/)
+
+! --- Rastreadores y analytics de YouTube ---
 ||youtube.com/api/stats/watchtime$xmlhttprequest
 ||youtube.com/api/stats/qoe$xmlhttprequest
-||youtube.com/youtubei/v1/log_event$xmlhttprequest
-||youtube.com/youtubei/v1/player/heartbeat$xmlhttprequest
 ||youtube.com/api/stats/playback$xmlhttprequest
-||youtube.com/pcs/activeview$xmlhttprequest
-||youtube.com/generate_204$image,xmlhttprequest
-||youtube.com/youtubei/v1/interaction$xmlhttprequest
 ||youtube.com/api/stats/engagement$xmlhttprequest
-||youtube.com/youtubei/v1/feedback$xmlhttprequest
 ||youtube.com/api/stats/share$xmlhttprequest
-||youtube.com/csi_204$image,xmlhttprequest
-||youtube.com/youtubei/v1/log_interaction$xmlhttprequest
-||youtube.com/api/stats/creator$xmlhttprequest
-||youtube.com/youtubei/v1/att/get$xmlhttprequest
-||youtube.com/api/stats/abr$xmlhttprequest
-||youtube.com/youtubei/v1/player/get_storyboard$xmlhttprequest
-||youtube.com/api/stats/subscribe$xmlhttprequest
-||youtube.com/youtubei/v1/guide/impression$xmlhttprequest
 ||youtube.com/api/stats/like$xmlhttprequest
-||youtube.com/pcs/impression$xmlhttprequest
-||youtube.com/youtubei/v1/browse/impression$xmlhttprequest
 ||youtube.com/api/stats/comment$xmlhttprequest
-||youtube.com/youtubei/v1/notification/mark_read$xmlhttprequest
-||youtube.com/api/stats/playlist$xmlhttprequest
-||youtube.com/youtubei/v1/player/impression$xmlhttprequest
+||youtube.com/api/stats/subscribe$xmlhttprequest
+||youtube.com/api/stats/creator$xmlhttprequest
 ||youtube.com/api/stats/channel$xmlhttprequest
+||youtube.com/api/stats/playlist$xmlhttprequest
+||youtube.com/api/stats/abr$xmlhttprequest
+||youtube.com/youtubei/v1/log_event$xmlhttprequest
+||youtube.com/youtubei/v1/log_interaction$xmlhttprequest
+||youtube.com/youtubei/v1/player/heartbeat$xmlhttprequest
+||youtube.com/youtubei/v1/interaction$xmlhttprequest
+||youtube.com/youtubei/v1/feedback$xmlhttprequest
+||youtube.com/youtubei/v1/att/get$xmlhttprequest
+||youtube.com/youtubei/v1/att/*$xmlhttprequest
+||youtube.com/youtubei/v1/guide/impression$xmlhttprequest
+||youtube.com/youtubei/v1/browse/impression$xmlhttprequest
+||youtube.com/youtubei/v1/notification/mark_read$xmlhttprequest
+||youtube.com/pcs/activeview$xmlhttprequest
+||youtube.com/pcs/impression$xmlhttprequest
+||youtube.com/csi_204$image,xmlhttprequest
+||youtube.com/generate_204$image,xmlhttprequest
 
-! ========== SPOTIFY ==========
 
-! Anuncios de audio y display
+
+! ============================================================
+! ████████╗██╗██╗  ██╗████████╗ ██████╗ ██╗  ██╗
+! ╚══██╔══╝██║██║ ██╔╝╚══██╔══╝██╔═══██╗██║ ██╔╝
+!    ██║   ██║█████╔╝    ██║   ██║   ██║█████╔╝
+!    ██║   ██║██╔═██╗    ██║   ██║   ██║██╔═██╗
+!    ██║   ██║██║  ██╗   ██║   ╚██████╔╝██║  ██╗
+!    ╚═╝   ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝
+! ============================================================
+! NOTA: Para cobertura completa suscribe también:
+! https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.tiktok.extended.txt
+
+! --- Anuncios de red TikTok ---
+||ads.tiktok.com^
+||ads-api.tiktok.com^
+||ad.tiktok.com^
+||ad.tiktokv.com^
+||business.tiktok.com/adv/*
+||tiktok.com/api/*/ad*$xmlhttprequest
+||tiktok.com/aweme/v1/ads/*$xmlhttprequest
+||tiktok.com/aweme/v1/promotions/*$xmlhttprequest
+||tiktok.com/api/v1/promotions/*$xmlhttprequest
+||tiktokcdn-us.com/pangle/*
+||api-access.pangle.io^
+||api.pangolin.net^
+||pangle.io^
+||pangleoss.com^
+||ad.oceanengine.com^
+||analytics.oceanengine.com^
+||monitor.oceanengine.com^
+
+! --- Dominios CDN de TikTok Live con anuncios ---
+||tiktokcdn-us.com^
+||ttlivecdn.com^
+||ibytedtos.com^
+||ibyteimg.com^
+||bytefcdn-oversea.com^
+||sf16-muse-va.ibytedtos.com^
+||sf16-muse-sg.ibytedtos.com^
+||sf19-muse-va.ibytedtos.com^
+
+! --- Rastreadores nativos ByteDance/TikTok ---
+||log.byteoversea.com^
+||mon.byteoversea.com^
+||mcs.byteoversea.com^
+||gplog-sg.byteoversea.com^
+||gplog-va.byteoversea.com^
+||frontier.byteoversea.com^
+||maliva-mcs.byteoversea.com^
+||log-tiktok.byteoversea.net^
+||mcs-tiktok.byteoversea.net^
+||mon-sg.byteoversea.com^
+||efp.byteoversea.com^
+||efp-sg.byteoversea.com^
+||efp-va.byteoversea.com^
+||metrics.bytedance.com^
+||analytics.bytedance.com^
+||log.bytedance.com^
+||mon.bytedance.com^
+||mcs.bytedance.com^
+||slardar.bytedance.com^
+||toblog.ctobsnssdk.com^
+||log.toblog.ctobsnssdk.com^
+||applog.tobsnssdk.com^
+||log-mt.tobsnssdk.com^
+||applog-va.tobsnssdk.com^
+||applog-sg.tobsnssdk.com^
+||mssdk.tiktokv.us^
+||mssdk16-normal-useast5.tiktokv.us^
+||log.tiktokv.com^
+||mcs.tiktokv.com^
+||mon.tiktokv.com^
+||mon-va.tiktokv.com^
+||bdapi-normal-useast5.tiktokv.com^
+||bdapi-access.tiktokv.com^
+||api16-normal-useast5.tiktokv.com^
+||api19-normal-useast5.tiktokv.com^
+||api21-normal-useast5.tiktokv.com^
+||api22-normal-useast5.tiktokv.com^
+
+! --- Elementos de anuncios en la interfaz web ---
+www.tiktok.com##[class*="ad-container"]
+www.tiktok.com##[class*="AdContainer"]
+www.tiktok.com##[data-e2e="ad-label"]
+www.tiktok.com##div[class*="DivAdContainer"]
+www.tiktok.com##[class*="tiktok-ad"]
+www.tiktok.com##div[id*="ad-slot"]
+www.tiktok.com##[data-testid*="ad"]
+www.tiktok.com##[class*="SpotlightCard"]
+www.tiktok.com##[class*="PromoteLink"]
+www.tiktok.com##[class*="promote-"]
+www.tiktok.com##[class*="TopAds"]
+www.tiktok.com##div[class*="LiveAd"]
+www.tiktok.com##[data-e2e="live-ad-label"]
+
+
+
+! ============================================================
+! ███████╗██████╗  ██████╗ ████████╗██╗███████╗██╗   ██╗
+! ██╔════╝██╔══██╗██╔═══██╗╚══██╔══╝██║██╔════╝╚██╗ ██╔╝
+! ███████╗██████╔╝██║   ██║   ██║   ██║█████╗   ╚████╔╝
+! ╚════██║██╔═══╝ ██║   ██║   ██║   ██║██╔══╝    ╚██╔╝
+! ███████║██║     ╚██████╔╝   ██║   ██║██║        ██║
+! ╚══════╝╚═╝      ╚═════╝    ╚═╝   ╚═╝╚═╝        ╚═╝
+! ============================================================
+
+! --- Anuncios de audio y display (red) ---
 ||spclient.wg.spotify.com/ads/*
 ||spclient.wg.spotify.com/ad-logic/*
-||audio-ads-*.spotifycdn.com^
-||heads-fa.spotify.com^
-||audio-ak-spotify-com.akamaized.net/audio/ad/*
-||open.spotify.com/embed/ad/*
-||ads.spotify.com^
-||audio-ads.spotify.com^
-||audio2.spotify.com^
-||partner.googleadservices.com^$domain=open.spotify.com
 ||spclient.wg.spotify.com/advertising-platform/*
 ||spclient.wg.spotify.com/ad-serving/*
 ||spclient.wg.spotify.com/sponsored-playlist/*
 ||spclient.wg.spotify.com/promoted-playlist/*
 ||spclient.wg.spotify.com/brand-solutions/*
+||spclient.wg.spotify.com/ad-attribution/*
+||spclient.wg.spotify.com/promoted-content/*
+||spclient.wg.spotify.com/native-ad/*
+||spclient.wg.spotify.com/display-ad/*
+||spclient.wg.spotify.com/programmatic/*
+||spclient.wg.spotify.com/brand-takeover/*
+||spclient.wg.spotify.com/video-ads/*
+||spclient.wg.spotify.com/podcast-ads/*
+||spclient.wg.spotify.com/ad-decision/*
+||spclient.wg.spotify.com/ad-auction/*
+||spclient.wg.spotify.com/ad-creative/*
+||spclient.wg.spotify.com/ad-impression/*
+||audio-ads-*.spotifycdn.com^
+||heads-fa.spotify.com^
+||audio-ak-spotify-com.akamaized.net/audio/ad/*
+||audio-ak.spotify.com.edgesuite.net/audio/ad/*
+||heads4-ak.spotify.com.edgesuite.net^
+||open.spotify.com/embed/ad/*
+||ads.spotify.com^
+||audio-ads.spotify.com^
+||audio-ads.spotify.com.edgesuite.net^
+||audio2.spotify.com^
 ||audio-ads-fa.scdn.co^
 ||i.scdn.co/image/ad_*
 ||lineup-images.scdn.co/ad_*
-||heads4-ak.spotify.com.edgesuite.net^
-||audio-ak.spotify.com.edgesuite.net/audio/ad/*
+||audio-ads-production-*.s3.amazonaws.com^
+||spotify-ad-creatives.s3.amazonaws.com^
+||creatives.spotify.com^
+||anchor-ads.spotify.com^
+! Anuncios de podcast
+||spclient.wg.spotify.com/podroll/*
+||spclient.wg.spotify.com/audio-ads/*
+! Redes de anuncios de terceros en Spotify
+||partner.googleadservices.com^$domain=open.spotify.com
 ||adnxs.com^$domain=open.spotify.com
 ||adsystem.amazon.com^$domain=open.spotify.com
 ||amazon-adsystem.com^$domain=open.spotify.com
@@ -193,88 +407,77 @@ youtube.com##ytd-reel-video-renderer .overlay-icon[class*="ad"]
 ||securepubads.g.doubleclick.net^$domain=open.spotify.com
 ||tpc.googlesyndication.com^$domain=open.spotify.com
 ||pagead2.googlesyndication.com^$domain=open.spotify.com
-||audio-ads.spotify.com.edgesuite.net^
 ||pubads.g.doubleclick.net^$domain=open.spotify.com
-||spclient.wg.spotify.com/ad-attribution/*
-||spclient.wg.spotify.com/promoted-content/*
-||spclient.wg.spotify.com/native-ad/*
-||spclient.wg.spotify.com/display-ad/*
-||spclient.wg.spotify.com/programmatic/*
-||spclient.wg.spotify.com/brand-takeover/*
-||spclient.wg.spotify.com/video-ads/*
-||spclient.wg.spotify.com/podcast-ads/*
-||audio-ads-production-*.s3.amazonaws.com^
-||spotify-ad-creatives.s3.amazonaws.com^
-||creatives.spotify.com^
 
-! Elementos de anuncios en la interfaz web
+! --- Elementos de anuncios en la interfaz web ---
 open.spotify.com##[data-testid="ad-formats-ad-container"]
 open.spotify.com##[data-testid="ad-banner"]
 open.spotify.com##[data-testid="display-ad"]
 open.spotify.com##[data-testid="video-ad-ui"]
-open.spotify.com##div[class*="AdContainer"]
-open.spotify.com##div[class*="AdBanner"]
-open.spotify.com##div[class*="advertisement"]
-open.spotify.com##.DesktopAdModal__container
-open.spotify.com##.BillboardAd
-open.spotify.com##.ad-container
-open.spotify.com##.LeaderboardAd
 open.spotify.com##[data-testid="ad-formats-video-ad-ui"]
 open.spotify.com##[data-testid="ad-formats-display-ad"]
 open.spotify.com##[data-testid="sponsored-playlist"]
-open.spotify.com##div[class*="AdLeaderboard"]
-open.spotify.com##div[class*="NativeAd"]
-open.spotify.com##div[class*="BrandedPlaylist"]
 open.spotify.com##[data-testid="billboard-ad"]
 open.spotify.com##[data-testid="native-ad"]
 open.spotify.com##[data-testid="programmatic-ad"]
-open.spotify.com##div[class*="SponseredPlaylist"]
-open.spotify.com##div[class*="PromotedContent"]
 open.spotify.com##[data-testid="homepage-ad-slot"]
 open.spotify.com##[data-testid="right-sidebar-ad"]
-open.spotify.com##div[class*="VideoAd"]
-open.spotify.com##div[class*="AudioAd"]
 open.spotify.com##[data-testid="podcast-ad-banner"]
-open.spotify.com##div[class*="InterstitialAd"]
-open.spotify.com##[class*="ad-slot-"]
-open.spotify.com##[class*="advertisement-"]
-open.spotify.com##div[class*="SponsoredTrack"]
-open.spotify.com##div[class*="BrandTakeover"]
 open.spotify.com##[data-testid="brand-takeover"]
 open.spotify.com##[data-testid="midroll-ad"]
 open.spotify.com##[data-testid="preroll-ad"]
-open.spotify.com##div[class*="CompanionAd"]
-open.spotify.com##div[class*="OverlayAd"]
 open.spotify.com##[data-testid="overlay-ad"]
-open.spotify.com##div[aria-label*="Advertisement"]
-open.spotify.com##div[aria-label*="Sponsored"]
 open.spotify.com##[data-testid="desktop-ad-modal"]
 open.spotify.com##[data-testid="full-screen-ad"]
-open.spotify.com##div[class*="MobileAd"]
-open.spotify.com##div[class*="TabletAd"]
 open.spotify.com##[data-testid="carousel-ad"]
-open.spotify.com##div[class*="CarouselAd"]
 open.spotify.com##[data-testid="header-ad-banner"]
 open.spotify.com##[data-testid="footer-ad-banner"]
+open.spotify.com##[data-testid="inline-ad-component"]
+open.spotify.com##[data-testid="floating-ad"]
+open.spotify.com##[data-testid="popup-ad"]
+open.spotify.com##div[class*="AdContainer"]
+open.spotify.com##div[class*="AdBanner"]
+open.spotify.com##div[class*="AdLeaderboard"]
+open.spotify.com##div[class*="NativeAd"]
+open.spotify.com##div[class*="BrandedPlaylist"]
+open.spotify.com##div[class*="VideoAd"]
+open.spotify.com##div[class*="AudioAd"]
+open.spotify.com##div[class*="InterstitialAd"]
+open.spotify.com##div[class*="SponsoredTrack"]
+open.spotify.com##div[class*="BrandTakeover"]
+open.spotify.com##div[class*="CompanionAd"]
+open.spotify.com##div[class*="OverlayAd"]
+open.spotify.com##div[class*="MobileAd"]
+open.spotify.com##div[class*="TabletAd"]
+open.spotify.com##div[class*="CarouselAd"]
 open.spotify.com##div[class*="SidebarAd"]
 open.spotify.com##div[class*="InlineAd"]
-open.spotify.com##[data-testid="inline-ad-component"]
 open.spotify.com##div[class*="FloatingAd"]
-open.spotify.com##[data-testid="floating-ad"]
 open.spotify.com##div[class*="PopupAd"]
-open.spotify.com##[data-testid="popup-ad"]
 open.spotify.com##div[class*="ModalAd"]
+open.spotify.com##div[class*="PromotedContent"]
+open.spotify.com##div[class*="SponseredPlaylist"]
+open.spotify.com##div[class*="advertisement"]
+open.spotify.com##.DesktopAdModal__container
+open.spotify.com##.BillboardAd
+open.spotify.com##.LeaderboardAd
+open.spotify.com##.ad-container
+open.spotify.com##[class*="ad-slot-"]
+open.spotify.com##[class*="advertisement-"]
+open.spotify.com##div[aria-label*="Advertisement"]
+open.spotify.com##div[aria-label*="Sponsored"]
+! Botones upsell Premium
+open.spotify.com##button[data-testid*="premium"]
+open.spotify.com##div[class*="UpgradeButton"]
+open.spotify.com##[data-testid="upsell-banner"]
 
-! Rastreadores y analytics de Spotify
-||spclient.wg.spotify.com/logging/*
-||spclient.wg.spotify.com/track-playback/*
-||spclient.wg.spotify.com/social-connect/*
-||spclient.wg.spotify.com/user-profile-view/*
-||spclient.wg.spotify.com/ad-attribution/*
-||crashdump.spotify.com^
+! --- Rastreadores y analytics de Spotify ---
 ||analytics.spotify.com^
 ||log.spotify.com^
 ||metrics.spotify.com^
+||crashdump.spotify.com^
+||spclient.wg.spotify.com/logging/*
+||spclient.wg.spotify.com/track-playback/*
 ||spclient.wg.spotify.com/user-behavior-analytics/*
 ||spclient.wg.spotify.com/listening-history/*
 ||spclient.wg.spotify.com/usage-metrics/*
@@ -292,41 +495,33 @@ open.spotify.com##div[class*="ModalAd"]
 ||spclient.wg.spotify.com/session-tracking/*
 ||spclient.wg.spotify.com/device-fingerprinting/*
 ||spclient.wg.spotify.com/location-tracking/*
-||spclient.wg.spotify.com/cross-platform-tracking/*
-||spclient.wg.spotify.com/third-party-analytics/*
-||spclient.wg.spotify.com/data-collection/*
+||spclient.wg.spotify.com/a-b-testing/*
+||spclient.wg.spotify.com/experimentation/*
 ||spclient.wg.spotify.com/telemetry/*
 ||spclient.wg.spotify.com/error-reporting/*
 ||spclient.wg.spotify.com/crash-reporting/*
-||spclient.wg.spotify.com/performance-monitoring/*
+||spclient.wg.spotify.com/data-collection/*
+||spclient.wg.spotify.com/third-party-analytics/*
 ||spclient.wg.spotify.com/user-interaction-tracking/*
 ||spclient.wg.spotify.com/feature-usage-tracking/*
 ||spclient.wg.spotify.com/search-analytics/*
-||spclient.wg.spotify.com/discovery-metrics/*
 ||spclient.wg.spotify.com/retention-analytics/*
 ||spclient.wg.spotify.com/churn-prediction/*
-||spclient.wg.spotify.com/lifetime-value-tracking/*
-||spclient.wg.spotify.com/a-b-testing/*
-||spclient.wg.spotify.com/experimentation/*
 ||spclient.wg.spotify.com/cohort-analysis/*
 ||spclient.wg.spotify.com/funnel-analytics/*
-||spclient.wg.spotify.com/conversion-funnel/*
 ||spclient.wg.spotify.com/revenue-tracking/*
 ||spclient.wg.spotify.com/subscription-analytics/*
 ||spclient.wg.spotify.com/payment-tracking/*
-||spclient.wg.spotify.com/billing-analytics/*
-||spclient.wg.spotify.com/fraud-detection/*
 ||spclient.wg.spotify.com/security-monitoring/*
 ||spclient.wg.spotify.com/content-analytics/*
+||spclient.wg.spotify.com/social-connect/*
+||spclient.wg.spotify.com/performance-monitoring/*
 
-! Servicios de terceros usados por Spotify
+! --- Servicios de terceros de Spotify ---
 ||branch.io^$domain=open.spotify.com
 ||facebook.com/tr*$domain=open.spotify.com
 ||googletagmanager.com^$domain=open.spotify.com
 ||google-analytics.com^$domain=open.spotify.com
-||firebase.googleapis.com^$domain=open.spotify.com
-||firebaseapp.com^$domain=open.spotify.com
-||amazonaws.com/mobileanalytics/*$domain=open.spotify.com
 ||appsflyer.com^$domain=open.spotify.com
 ||adjust.com^$domain=open.spotify.com
 ||mixpanel.com^$domain=open.spotify.com
@@ -335,22 +530,139 @@ open.spotify.com##div[class*="ModalAd"]
 ||hotjar.com^$domain=open.spotify.com
 ||fullstory.com^$domain=open.spotify.com
 ||logrocket.com^$domain=open.spotify.com
-||sentry.io^$domain=open.spotify.com
-||bugsnag.com^$domain=open.spotify.com
-||rollbar.com^$domain=open.spotify.com
 ||newrelic.com^$domain=open.spotify.com
 ||datadoghq.com^$domain=open.spotify.com
 
-! ========== TWITTER/X ==========
 
-! Anuncios de contenido promocionado
+
+! ============================================================
+! ██╗███╗   ██╗███████╗████████╗ █████╗  ██████╗ ██████╗  █████╗ ███╗   ███╗
+! ██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██╔════╝ ██╔══██╗██╔══██╗████╗ ████║
+! ██║██╔██╗ ██║███████╗   ██║   ███████║██║  ███╗██████╔╝███████║██╔████╔██║
+! ██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║   ██║██╔══██╗██╔══██║██║╚██╔╝██║
+! ██║██║ ╚████║███████║   ██║   ██║  ██║╚██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║
+! ╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
+! ============================================================
+
+! --- Anuncios de red ---
+||instagram.com/api/*/ads/*
+||instagram.com/api/*/sponsored/*
+||instagram.com/api/*/promoted/*
+||i.instagram.com/api/*/ads/*
+||i.instagram.com/api/*/sponsored/*
+||i.instagram.com/api/*/promoted/*
+||graph.instagram.com/*/ads_insights*
+||graph.instagram.com/*/adcreatives*
+||graph.instagram.com/*/ads*
+||ads.instagram.com^
+||advertising.instagram.com^
+||instagram.com/ads/*
+||scontent.cdninstagram.com/*/ad_*
+||scontent-*.cdninstagram.com/*/ad_*
+||instagram.com/api/*/feed/timeline/sponsored*
+||instagram.com/api/*/feed/reels_media/sponsored*
+||instagram.com/api/*/stories/reel/sponsored*
+||instagram.com/api/*/explore/topical_explore/sponsored*
+||instagram.com/api/*/shopping/products/sponsored*
+||instagram.com/api/*/igtv/browse_feed/sponsored*
+||instagram.com/api/*/music/trending/sponsored*
+||instagram.com/graphql/query/*adsManager*$xmlhttprequest
+||instagram.com/web/sponsored_content/*$xmlhttprequest
+||instagram.com/ajax/sponsored/*$xmlhttprequest
+||instagram.com/ajax/ads/*$xmlhttprequest
+||instagram.com/ajax/instagram_ad_signal/$xmlhttprequest
+||instagram.com/qp/batch_fetch_web/*ad*$xmlhttprequest
+
+! --- Elementos de anuncios en la interfaz ---
+instagram.com##article:has([data-testid="sponsored-label"])
+instagram.com##article:has(span:has-text(/Sponsored|Patrocinado/))
+instagram.com##div[class*="sponsored"]
+instagram.com##div[class*="promoted"]
+instagram.com##div[class*="advertisement"]
+instagram.com##[data-testid="sponsored-label"]
+instagram.com##[data-testid="ad-label"]
+instagram.com##[aria-label*="Sponsored"]
+instagram.com##[aria-label*="Patrocinado"]
+instagram.com##div[class*="AdContainer"]
+instagram.com##div[class*="SponsoredPost"]
+instagram.com##div[class*="PromotedContent"]
+instagram.com##[data-testid="story-ad-container"]
+instagram.com##[data-testid="reel-ad-container"]
+instagram.com##[data-testid="feed-ad-container"]
+instagram.com##[data-testid="explore-ad-container"]
+instagram.com##[data-testid="shopping-ad"]
+instagram.com##[data-testid="video-ad-overlay"]
+instagram.com##[data-testid="carousel-ad"]
+instagram.com##[data-testid="collection-ad"]
+instagram.com##[data-testid="story-ad-skip-button"]
+instagram.com##[data-testid="reel-ad-skip-button"]
+instagram.com##div[class*="StoryAd"]
+instagram.com##div[class*="ReelAd"]
+instagram.com##div[class*="NativeAd"]
+instagram.com##div[class*="BannerAd"]
+instagram.com##div[class*="VideoAd"]
+instagram.com##div[class*="CarouselAd"]
+instagram.com##div[class*="ShoppingAd"]
+instagram.com##div[class*="CollectionAd"]
+instagram.com##div[class*="InlineAd"]
+instagram.com##div[class*="SidebarAd"]
+instagram.com##div[class*="OverlayAd"]
+instagram.com##div[class*="InterstitialAd"]
+instagram.com##div[class*="PopupAd"]
+instagram.com##div[class*="FooterAd"]
+instagram.com##div[class*="HeaderAd"]
+instagram.com##div[class*="DisplayAd"]
+instagram.com##section[class*="Ad"]
+instagram.com##article[class*="Ad"]
+instagram.com##div[aria-label*="Sponsored"]
+instagram.com##div[aria-label*="Patrocinado"]
+
+! --- Rastreadores de Instagram ---
+||instagram.com/ajax/bz$xmlhttprequest
+||instagram.com/logging_client_events$xmlhttprequest
+||instagram.com/web/impression_logging/$xmlhttprequest
+||instagram.com/web/engagement_logging/$xmlhttprequest
+||instagram.com/web/conversion_logging/$xmlhttprequest
+||instagram.com/web/behavioral_data/$xmlhttprequest
+||instagram.com/web/interaction_logging/$xmlhttprequest
+||instagram.com/api/*/analytics/*$xmlhttprequest
+||instagram.com/api/*/audience_insights/*$xmlhttprequest
+||instagram.com/api/*/performance_insights/*$xmlhttprequest
+||instagram.com/api/*/attribution_data/*$xmlhttprequest
+||instagram.com/api/*/targeting_data/*$xmlhttprequest
+||instagram.com/api/*/user_behavior/*$xmlhttprequest
+||instagram.com/api/*/engagement_metrics/*$xmlhttprequest
+||instagram.com/api/*/session_tracking/*$xmlhttprequest
+||instagram.com/api/*/feature_usage/*$xmlhttprequest
+||instagram.com/api/*/business_conversion/*$xmlhttprequest
+
+! --- Servicios de terceros en Instagram ---
+||facebook.com/tr*$domain=instagram.com
+||connect.facebook.net^$domain=instagram.com
+||googleadservices.com^$domain=instagram.com
+||googlesyndication.com^$domain=instagram.com
+||doubleclick.net^$domain=instagram.com
+||googletagmanager.com^$domain=instagram.com
+||google-analytics.com^$domain=instagram.com
+||amazon-adsystem.com^$domain=instagram.com
+||branch.io^$domain=instagram.com
+||adjust.com^$domain=instagram.com
+||appsflyer.com^$domain=instagram.com
+
+
+
+! ============================================================
+! ████████╗██╗    ██╗██╗████████╗████████╗███████╗██████╗     ██╗  ██╗
+! ╚══██╔══╝██║    ██║██║╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗    ╚██╗██╔╝
+!    ██║   ██║ █╗ ██║██║   ██║      ██║   █████╗  ██████╔╝     ╚███╔╝
+!    ██║   ██║███╗██║██║   ██║      ██║   ██╔══╝  ██╔══██╗     ██╔██╗
+!    ██║   ╚███╔███╔╝██║   ██║      ██║   ███████╗██║  ██║    ██╔╝ ██╗
+!    ╚═╝    ╚══╝╚══╝ ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝
+! ============================================================
+
+! --- Anuncios de red Twitter/X ---
 ||ads-api.twitter.com^
 ||ads.twitter.com^
-||analytics.twitter.com^
-||business.twitter.com/en/advertising^
-||p.twitter.com^
-||syndication.twitter.com^
-||ads-twitter.com^
 ||advertising.twitter.com^
 ||promoted-trends.twitter.com^
 ||twitter.com/i/api/1.1/ads/*
@@ -361,11 +673,6 @@ open.spotify.com##div[class*="ModalAd"]
 ||twitter.com/i/ads/*
 ||ads-api.x.com^
 ||ads.x.com^
-||analytics.x.com^
-||business.x.com/en/advertising^
-||p.x.com^
-||syndication.x.com^
-||ads-x.com^
 ||advertising.x.com^
 ||promoted-trends.x.com^
 ||x.com/i/api/1.1/ads/*
@@ -378,9 +685,8 @@ open.spotify.com##div[class*="ModalAd"]
 ||x.com/i/api/*/promoted_trends*
 ||twitter.com/i/api/*/sponsored_timeline*
 ||x.com/i/api/*/sponsored_timeline*
-||abs.twimg.com/creative-assets/ads/*
 ||pbs.twimg.com/ad_img/*
-||abs.twimg.com/a/*/ad/*
+||abs.twimg.com/creative-assets/ads/*
 ||ton.twimg.com/syndication/promoted/*
 ||video.twimg.com/promoted_video/*
 ||twitter.com/i/api/*/timeline/promoted*
@@ -388,10 +694,9 @@ open.spotify.com##div[class*="ModalAd"]
 ||twitter.com/i/api/*/search/adaptive_promoted*
 ||x.com/i/api/*/search/adaptive_promoted*
 
-! Elementos de anuncios en la interfaz
+! --- Elementos de anuncios en la interfaz ---
 twitter.com##[data-testid="placementTracking"]
 twitter.com##[data-testid="promotedTweet"]
-twitter.com##[data-testid="tweetButtonInline"]
 twitter.com##article[data-testid="tweet"]:has([data-testid="promotedIndicator"])
 twitter.com##div[data-testid="trend"]:has([data-testid="promotedIndicator"])
 twitter.com##[data-testid="promotedIndicator"]
@@ -399,76 +704,53 @@ twitter.com##[data-testid="sponsoredLabel"]
 twitter.com##[data-testid="adChoicesIcon"]
 twitter.com##div[role="complementary"]:has([data-testid="promotedIndicator"])
 twitter.com##[data-testid="sidebarAdvertisement"]
-twitter.com##[data-testid="trendingTopics"]:has([data-testid="promotedIndicator"])
 twitter.com##div[aria-label*="Promoted"]
 twitter.com##div[aria-label*="Sponsored"]
 twitter.com##[data-testid="timelinePromotedTweet"]
-twitter.com##[data-testid="tweetEngagements"]:has([data-testid="promotedIndicator"])
+twitter.com##[data-testid="cellInnerDiv"]:has([data-testid="promotedIndicator"])
+twitter.com##[data-testid="UserCell"]:has([data-testid="promotedIndicator"])
 twitter.com##div[class*="promoted"]
 twitter.com##div[class*="sponsored"]
 twitter.com##div[class*="advertisement"]
-twitter.com##[data-testid="UserCell"]:has([data-testid="promotedIndicator"])
-twitter.com##[data-testid="cellInnerDiv"]:has([data-testid="promotedIndicator"])
+twitter.com##[data-testid="prerollVideoAd"]
+twitter.com##div[class*="VideoAdContainer"]
+twitter.com##div[class*="PromotedVideo"]
 x.com##[data-testid="placementTracking"]
 x.com##[data-testid="promotedTweet"]
-x.com##[data-testid="tweetButtonInline"]
 x.com##article[data-testid="tweet"]:has([data-testid="promotedIndicator"])
 x.com##div[data-testid="trend"]:has([data-testid="promotedIndicator"])
 x.com##[data-testid="promotedIndicator"]
 x.com##[data-testid="sponsoredLabel"]
 x.com##[data-testid="adChoicesIcon"]
 x.com##div[role="complementary"]:has([data-testid="promotedIndicator"])
-x.com##[data-testid="sidebarAdvertisement"]
-x.com##[data-testid="trendingTopics"]:has([data-testid="promotedIndicator"])
 x.com##div[aria-label*="Promoted"]
 x.com##div[aria-label*="Sponsored"]
 x.com##[data-testid="timelinePromotedTweet"]
-x.com##[data-testid="tweetEngagements"]:has([data-testid="promotedIndicator"])
+x.com##[data-testid="cellInnerDiv"]:has([data-testid="promotedIndicator"])
+x.com##[data-testid="UserCell"]:has([data-testid="promotedIndicator"])
 x.com##div[class*="promoted"]
 x.com##div[class*="sponsored"]
-x.com##div[class*="advertisement"]
-x.com##[data-testid="UserCell"]:has([data-testid="promotedIndicator"])
-x.com##[data-testid="cellInnerDiv"]:has([data-testid="promotedIndicator"])
-
-! Anuncios de video y contenido multimedia
-twitter.com##div[data-testid="videoPlayer"]:has([data-testid="promotedIndicator"])
-twitter.com##div[data-testid="videoComponent"]:has([data-testid="promotedIndicator"])
-twitter.com##[data-testid="prerollVideoAd"]
-twitter.com##[data-testid="videoAdvertisement"]
-twitter.com##div[class*="VideoAdContainer"]
-twitter.com##div[class*="PromotedVideo"]
-x.com##div[data-testid="videoPlayer"]:has([data-testid="promotedIndicator"])
-x.com##div[data-testid="videoComponent"]:has([data-testid="promotedIndicator"])
 x.com##[data-testid="prerollVideoAd"]
-x.com##[data-testid="videoAdvertisement"]
 x.com##div[class*="VideoAdContainer"]
 x.com##div[class*="PromotedVideo"]
 
-! Rastreadores y analytics de Twitter/X
-||twitter.com/i/api/*/jot/client_event*
-||twitter.com/i/api/*/analytics/*
-||twitter.com/i/api/*/impression/*
+! --- Rastreadores de Twitter/X ---
 ||twitter.com/i/jot/client_event*
 ||twitter.com/i/analytics/*
 ||analytics.twitter.com/user/*
 ||twitter.com/i/api/*/conversion/*
 ||twitter.com/i/api/*/attribution/*
-||x.com/i/api/*/jot/client_event*
-||x.com/i/api/*/analytics/*
-||x.com/i/api/*/impression/*
+||twitter.com/i/api/*/audience_insights/*
+||twitter.com/i/api/*/engagement_metrics/*
 ||x.com/i/jot/client_event*
 ||x.com/i/analytics/*
 ||analytics.x.com/user/*
 ||x.com/i/api/*/conversion/*
 ||x.com/i/api/*/attribution/*
-||twitter.com/i/api/*/audience_insights/*
 ||x.com/i/api/*/audience_insights/*
-||twitter.com/i/api/*/engagement_metrics/*
 ||x.com/i/api/*/engagement_metrics/*
-||twitter.com/i/api/*/performance_data/*
-||x.com/i/api/*/performance_data/*
 
-! Servicios de terceros
+! --- Servicios de terceros en Twitter/X ---
 ||doubleclick.net^$domain=twitter.com|x.com
 ||googleadservices.com^$domain=twitter.com|x.com
 ||googlesyndication.com^$domain=twitter.com|x.com
@@ -476,190 +758,416 @@ x.com##div[class*="PromotedVideo"]
 ||facebook.com/tr*$domain=twitter.com|x.com
 ||googletagmanager.com^$domain=twitter.com|x.com
 
-! ========== INSTAGRAM ==========
 
-! Anuncios de contenido patrocinado
-||instagram.com/api/*/ads/*
-||instagram.com/api/*/sponsored/*
-||instagram.com/api/*/promoted/*
-||i.instagram.com/api/*/ads/*
-||i.instagram.com/api/*/sponsored/*
-||i.instagram.com/api/*/promoted/*
-||graph.instagram.com/*/ads_insights*
-||graph.instagram.com/*/adcreatives*
-||graph.instagram.com/*/ads*
-||business.instagram.com/advertising/*
-||ads.instagram.com^
-||advertising.instagram.com^
-||instagram.com/ads/*
-||instagram.com/business/advertising/*
-||scontent.cdninstagram.com/*/ad_*
-||scontent-*.cdninstagram.com/*/ad_*
-||instagram.com/api/*/feed/timeline/sponsored*
-||instagram.com/api/*/feed/reels_media/sponsored*
-||instagram.com/api/*/stories/reel/sponsored*
-||instagram.com/api/*/explore/topical_explore/sponsored*
-||instagram.com/api/*/shopping/products/sponsored*
-||instagram.com/api/*/igtv/browse_feed/sponsored*
-||instagram.com/api/*/direct_v2/sponsored*
-||instagram.com/api/*/music/trending/sponsored*
-||instagram.com/logging_client_events$xmlhttprequest,domain=instagram.com
-||instagram.com/qp/batch_fetch_web/*ad*$xmlhttprequest
-||instagram.com/graphql/query/*adsManager*$xmlhttprequest
-||instagram.com/api/*/media/*/ad_activity*$xmlhttprequest
-||instagram.com/web/sponsored_content/*$xmlhttprequest
-||instagram.com/api/*/business/instant_experience/*$xmlhttprequest
-||instagram.com/api/*/ads_manager/*$xmlhttprequest
-||instagram.com/ajax/sponsored/*$xmlhttprequest
-||instagram.com/ajax/ads/*$xmlhttprequest
 
-! Elementos de anuncios en la interfaz
-instagram.com##article:has([data-testid="sponsored-label"])
-instagram.com##div[role="button"]:has-text(/Sponsored|Patrocinado/)
-instagram.com##div:has-text(/Sponsored|Patrocinado/):not([role="button"])
-instagram.com##article:has(span:has-text(/Sponsored|Patrocinado/))
-instagram.com##div[class*="sponsored"]
-instagram.com##div[class*="promoted"]
-instagram.com##div[class*="advertisement"]
-instagram.com##[data-testid="sponsored-label"]
-instagram.com##[data-testid="ad-label"]
-instagram.com##[aria-label*="Sponsored"]
-instagram.com##[aria-label*="Patrocinado"]
-instagram.com##section:has([data-testid="sponsored-label"])
-instagram.com##article[role="presentation"]:has(span:has-text(/Sponsored/))
-instagram.com##div[class*="AdContainer"]
-instagram.com##div[class*="SponsoredPost"]
-instagram.com##div[class*="PromotedContent"]
-instagram.com##[data-testid="story-ad-container"]
-instagram.com##[data-testid="reel-ad-container"]
-instagram.com##[data-testid="feed-ad-container"]
-instagram.com##[data-testid="explore-ad-container"]
-instagram.com##div[class*="InstagramAd"]
-instagram.com##div[class*="IGAd"]
-instagram.com##[data-testid="shopping-ad"]
-instagram.com##div[class*="ShoppingAd"]
-instagram.com##[data-testid="video-ad-overlay"]
-instagram.com##div[class*="VideoAd"]
-instagram.com##[data-testid="carousel-ad"]
-instagram.com##div[class*="CarouselAd"]
-instagram.com##[data-testid="collection-ad"]
-instagram.com##div[class*="CollectionAd"]
-instagram.com##[data-testid="branded-content-label"]
-instagram.com##div[class*="BrandedContent"]
-instagram.com##[data-testid="partnership-label"]
-instagram.com##div[class*="Partnership"]
-instagram.com##section[class*="Ad"]
-instagram.com##article[class*="Ad"]
-instagram.com##div[class*="NativeAd"]
-instagram.com##[data-testid="inline-ad"]
-instagram.com##div[class*="InlineAd"]
-instagram.com##[data-testid="sidebar-ad"]
-instagram.com##div[class*="SidebarAd"]
-instagram.com##[data-testid="header-ad"]
-instagram.com##div[class*="HeaderAd"]
-instagram.com##[data-testid="footer-ad"]
-instagram.com##div[class*="FooterAd"]
-instagram.com##[data-testid="overlay-ad"]
-instagram.com##div[class*="OverlayAd"]
-instagram.com##[data-testid="interstitial-ad"]
-instagram.com##div[class*="InterstitialAd"]
-instagram.com##[data-testid="popup-ad"]
-instagram.com##div[class*="PopupAd"]
-instagram.com##[data-testid="banner-ad"]
-instagram.com##div[class*="BannerAd"]
-instagram.com##[data-testid="display-ad"]
-instagram.com##div[class*="DisplayAd"]
+! ============================================================
+! FACEBOOK / META
+! ============================================================
 
-! Anuncios en Stories y Reels
-instagram.com##div[class*="StoryAd"]
-instagram.com##[data-testid="story-sponsored-label"]
-instagram.com##div[role="presentation"]:has([data-testid="story-sponsored-label"])
-instagram.com##section:has([data-testid="story-sponsored-label"])
-instagram.com##div[class*="ReelAd"]
-instagram.com##[data-testid="reel-sponsored-label"]
-instagram.com##div[role="presentation"]:has([data-testid="reel-sponsored-label"])
-instagram.com##section:has([data-testid="reel-sponsored-label"])
-instagram.com##[data-testid="story-ad-skip-button"]
-instagram.com##[data-testid="reel-ad-skip-button"]
+! --- Anuncios de red ---
+||facebook.com/ads/*
+||facebook.com/adview/*
+||graph.facebook.com/*/adcreatives*
+||graph.facebook.com/*/ads*
+||graph.facebook.com/*/ad_*
+||an.facebook.com^
+||web.facebook.com/ads/*
+||connect.facebook.net/*/fbevents.js
+||connect.facebook.net/*/fbds.js
 
-! Rastreadores y analytics de Instagram
-||instagram.com/api/*/logging_client_events$xmlhttprequest
-||instagram.com/api/*/qe/sync/$xmlhttprequest
-||instagram.com/logging_client_events$xmlhttprequest
-||instagram.com/ajax/bz$xmlhttprequest
-||instagram.com/error/logging/$xmlhttprequest
-||instagram.com/api/*/users/*/info/$xmlhttprequest
-||instagram.com/graphql/query/*insights*$xmlhttprequest
-||instagram.com/api/*/media/*/insights*$xmlhttprequest
-||instagram.com/api/*/accounts/*/insights*$xmlhttprequest
-||instagram.com/web/activity/counts/$xmlhttprequest
-||instagram.com/api/*/analytics/*$xmlhttprequest
-||instagram.com/ajax/bootloader-endpoint/$xmlhttprequest
-||instagram.com/api/*/fbsearch/topsearch/$xmlhttprequest
-||instagram.com/ajax/instagram_ad_signal/$xmlhttprequest
-||instagram.com/web/impression_logging/$xmlhttprequest
-||instagram.com/api/*/business_conversion/*$xmlhttprequest
-||instagram.com/api/*/audience_insights/*$xmlhttprequest
-||instagram.com/web/engagement_logging/$xmlhttprequest
-||instagram.com/api/*/performance_insights/*$xmlhttprequest
-||instagram.com/web/conversion_logging/$xmlhttprequest
-||instagram.com/api/*/attribution_data/*$xmlhttprequest
-||instagram.com/web/behavioral_data/$xmlhttprequest
-||instagram.com/api/*/targeting_data/*$xmlhttprequest
-||instagram.com/web/demographic_data/$xmlhttprequest
-||instagram.com/api/*/user_behavior/*$xmlhttprequest
-||instagram.com/web/interaction_logging/$xmlhttprequest
-||instagram.com/api/*/engagement_metrics/*$xmlhttprequest
-||instagram.com/web/retention_data/$xmlhttprequest
-||instagram.com/api/*/session_tracking/*$xmlhttprequest
-||instagram.com/web/usage_analytics/$xmlhttprequest
-||instagram.com/api/*/feature_usage/*$xmlhttprequest
+! --- Elementos de anuncios ---
+facebook.com##div[aria-label*="Sponsored"]
+facebook.com##div[aria-label*="Patrocinado"]
+facebook.com##span:has-text(/Sponsored|Patrocinado/)
+facebook.com##[data-pagelet*="Ad"]
+facebook.com##div[data-testid*="ad"]
+facebook.com##[data-hyp-ad-slug]
+facebook.com##div[class*="x1qjc9v5"]:has(span:has-text(/Sponsored|Patrocinado/))
+facebook.com##[class*="_5x46"]:has([aria-label*="Sponsored"])
 
-! Servicios de terceros usados por Instagram
-||facebook.com/tr*$domain=instagram.com
-||connect.facebook.net^$domain=instagram.com
-||graph.facebook.com^$domain=instagram.com
-||googleadservices.com^$domain=instagram.com
-||googlesyndication.com^$domain=instagram.com
-||doubleclick.net^$domain=instagram.com
-||googletagmanager.com^$domain=instagram.com
-||google-analytics.com^$domain=instagram.com
-||amazon-adsystem.com^$domain=instagram.com
-||adsystem.amazon.com^$domain=instagram.com
-||branch.io^$domain=instagram.com
-||adjust.com^$domain=instagram.com
-||appsflyer.com^$domain=instagram.com
-||mixpanel.com^$domain=instagram.com
-||amplitude.com^$domain=instagram.com
-||hotjar.com^$domain=instagram.com
-||fullstory.com^$domain=instagram.com
-||sentry.io^$domain=instagram.com
-||newrelic.com^$domain=instagram.com
+! --- Meta Pixel y rastreadores ---
+||facebook.com/tr/*
+||pixel.facebook.com^
+||an.facebook.com^
+||connect.facebook.net/signals/*
 
-! ========== DOMINIOS GENERALES DE PUBLICIDAD ==========
 
-! Redes publicitarias comunes
-||adsystem.amazon.com^
-||amazon-adsystem.com^
-||adnxs.com^
-||adsafeprotected.com^
-||moatads.com^
-||scorecardresearch.com^
-||2mdn.net^
+
+! ============================================================
+! TWITCH
+! ============================================================
+
+! --- Anuncios de red ---
+||imasdk.googleapis.com/js/sdkloader/ima3.js$script,domain=twitch.tv
+||static.twitchsvc.net/assets/*/ads-bundle*$script
+||static.twitchsvc.net/assets/*/spade-tracking*$script
+||twitchadvertising.tv^
+||amazon-adsystem.com^$domain=twitch.tv
+||doubleclick.net^$domain=twitch.tv
+||googlesyndication.com^$domain=twitch.tv
+||securepubads.g.doubleclick.net^$domain=twitch.tv
+
+! --- Elementos de anuncios ---
+twitch.tv##.ad-banner-default
+twitch.tv##.video-player__ad-overlay
+twitch.tv##[class*="ad-banner"]
+twitch.tv##div[class*="tw-interstitial"]
+twitch.tv##.top-nav__prime-offers
+twitch.tv##[class*="video-ad-label"]
+twitch.tv##div[data-a-target="ad-countdown"]
+twitch.tv##[data-test-selector="ad-banner"]
+
+! --- Rastreadores Twitch ---
+||spade.twitch.tv^
+||countess.twitch.tv^
+||pubsub-edge.twitch.tv/v1/tmi-advertising*
+
+
+
+! ============================================================
+! REDDIT
+! ============================================================
+
+! --- Anuncios de red ---
+||events.reddit.com^
+||pixel.reddit.com^
+||alb.reddit.com^
+||reddit.com/api/*/promoted*
+||reddit.com/ads/*
+||redd.it/*/ad*
+
+! --- Elementos de anuncios ---
+www.reddit.com##div[data-promoted="true"]
+www.reddit.com##shreddit-ad-post
+www.reddit.com##[class*="promoted"]
+www.reddit.com##[data-before-content="promoted"]
+www.reddit.com##div[class*="ad-"]
+www.reddit.com##[data-testid="post-container"]:has([class*="promoted"])
+
+
+
+! ============================================================
+! LINKEDIN
+! ============================================================
+
+! --- Anuncios de red ---
+||ads.linkedin.com^
+||snap.licdn.com^
+||linkedin.com/li/track*
+||linkedin.com/pixel*
+||linkedin.com/api/*/ads/*
+||linkedin.com/api/*/sponsored/*
+||linkedin.com/advertising/*
+||platform.linkedin.com/ads/*
+
+! --- Elementos de anuncios ---
+www.linkedin.com##[class*="ad-banner"]
+www.linkedin.com##[data-tracking-control-name*="sponsored"]
+www.linkedin.com##li[class*="sponsored"]
+www.linkedin.com##[class*="sponsored-content"]
+www.linkedin.com##[class*="ad-unit"]
+www.linkedin.com##div[data-id*="sponsored"]
+www.linkedin.com##[data-ad-unit]
+www.linkedin.com##section[class*="ad"]
+www.linkedin.com##[class*="job-ad"]
+www.linkedin.com##[class*="InMailAd"]
+www.linkedin.com##[class*="message-ad"]
+www.linkedin.com##span:has-text(/Promoted|Sponsored/)
+www.linkedin.com##[aria-label*="Promoted"]
+www.linkedin.com##[aria-label*="Sponsored"]
+
+! --- Rastreadores LinkedIn ---
+||bat.bing.com^$domain=linkedin.com
+||linkedin.com/li/track*
+||linkedin.com/li/imp*
+||analytics.linkedin.com^
+
+
+
+! ============================================================
+! PINTEREST
+! ============================================================
+
+! --- Anuncios de red ---
+||ads.pinterest.com^
+||analytics.pinterest.com^
+||ct.pinterest.com^
+||log.pinterest.com^
+||trk.pinterest.com^
+||pinterest.com/ads/*
+||pinterest.com/ct.html*
+||pinterest.com/api/*/ads/*
+||pinimg.com/ads/*
+
+! --- Elementos de anuncios ---
+www.pinterest.com##[data-test-id="ad-pin"]
+www.pinterest.com##[data-grid-item]:has([data-test-id="ad-label"])
+www.pinterest.com##[class*="AdLabel"]
+www.pinterest.com##[data-test-id="promoted-pin"]
+www.pinterest.com##[class*="sponsored"]
+www.pinterest.com##[aria-label*="Promoted"]
+www.pinterest.com##[aria-label*="Sponsored"]
+www.pinterest.com##div[class*="PromotedPin"]
+www.pinterest.com##div[class*="AdPin"]
+
+
+
+! ============================================================
+! SNAPCHAT
+! ============================================================
+
+! --- Anuncios de red ---
+||adsapi.snapchat.com^
+||ads.snapchat.com^
+||tr.snapchat.com^
+||snapchat.com/ads/*
+||sc-static.net/*/ads/*
+
+! --- Elementos de anuncios ---
+www.snapchat.com##[class*="ad-container"]
+www.snapchat.com##[class*="SponsoredSnap"]
+www.snapchat.com##[class*="sponsored"]
+www.snapchat.com##[data-testid*="ad"]
+www.snapchat.com##[aria-label*="Sponsored"]
+
+! --- Rastreadores Snapchat ---
+||tr.snapchat.com^
+||sc-analytics.appspot.com^
+
+
+
+! ============================================================
+! PRIVACIDAD GENERAL — RASTREADORES CROSS-SITE
+! ============================================================
+
+! --- Google Analytics / Tag Manager ---
+||google-analytics.com^
+||www.google-analytics.com^
+||ssl.google-analytics.com^
+||analytics.google.com^
+||googletagmanager.com^
 ||googletagservices.com^
+||google-analytics.com/collect*
+||google-analytics.com/r/collect*
+||google-analytics.com/j/collect*
+||analytics.google.com/g/collect*
 
-! Evitar falsos positivos (whitelist selectivo)
-@@||youtube.com/api/stats/watchtime$xmlhttprequest,domain=youtube.com
+! --- Meta / Facebook Pixel ---
+||connect.facebook.net/en_US/fbevents.js
+||connect.facebook.net/*/fbevents.js
+||connect.facebook.net/signals/*
+||graph.facebook.com/tr*
+||pixel.facebook.com^
+
+! --- Microsoft Clarity / Bing Ads ---
+||bat.bing.com^
+||bat.r.msn.com^
+||clarity.ms^
+
+! --- Amazon Ads ---
+||amazon-adsystem.com^
+||adsystem.amazon.com^
+||fls-na.amazon.com^
+||fls-eu.amazon.com^
+||unagi.amazon.com^
+||analytics.amazon.com^
+
+! --- AppNexus / Xandr ---
+||adnxs.com^
+||secure.adnxs.com^
+
+! --- OpenX ---
+||openx.net^
+||ox-d.openx.net^
+
+! --- Criteo ---
+||criteo.com^
+||criteo.net^
+
+! --- Taboola ---
+||taboola.com^
+||trc.taboola.com^
+||cdn.taboola.com^
+||images.taboola.com^
+
+! --- Outbrain ---
+||outbrain.com^
+||widgets.outbrain.com^
+||outbrainimg.com^
+
+! --- Quantcast ---
+||quantserve.com^
+||quantcount.com^
+
+! --- Scorecardresearch ---
+||scorecardresearch.com^
+||beacon.scorecardresearch.com^
+
+! --- Digital fingerprinting / Supercookies ---
+||fingerprintjs.com^
+||fingerprint.com^
+||api.fpjs.io^
+||api.fingerprint.com^
+||fpnpmcdn.net^
+||visitoridentification.com^
+
+! --- Hotjar ---
+||hotjar.com^
+||static.hotjar.com^
+||script.hotjar.com^
+||vars.hotjar.com^
+||insights.hotjar.com^
+
+! --- Mixpanel ---
+||mixpanel.com^
+||api.mixpanel.com^
+
+! --- Amplitude ---
+||amplitude.com^
+||api.amplitude.com^
+||cdn.amplitude.com^
+
+! --- Segment ---
+||segment.com^
+||cdn.segment.com^
+||api.segment.io^
+
+! --- Sentry ---
+||sentry.io^
+||browser.sentry-cdn.com^
+
+! --- New Relic ---
+||newrelic.com^
+||bam.nr-data.net^
+||js-agent.newrelic.com^
+
+! --- DataDog ---
+||datadoghq.com^
+||browser-intake-datadoghq.com^
+
+! --- Branch (deep linking con tracking) ---
+||branch.io^
+||api2.branch.io^
+
+! --- AppsFlyer ---
+||appsflyer.com^
+||sdk.appsflyer.com^
+
+! --- Adjust ---
+||adjust.com^
+||app.adjust.com^
+
+! --- FullStory ---
+||fullstory.com^
+||rs.fullstory.com^
+
+! --- LogRocket ---
+||logrocket.com^
+||cdn.logrocket.io^
+
+! --- Mouseflow ---
+||mouseflow.com^
+||cdn.mouseflow.com^
+
+! --- Heap Analytics ---
+||heapanalytics.com^
+||cdn.heapanalytics.com^
+
+! --- Cloudflare Insights (tracking) ---
+||static.cloudflareinsights.com/beacon.min.js
+
+! --- Yahoo Ads ---
+||adserver.yahoo.com^
+||yahoo.com/admax/*
+||beachfront.io^
+
+! --- Redes publicitarias genéricas ---
+||rubiconproject.com^
+||pubmatic.com^
+||smartadserver.com^
+||spotxchange.com^
+||spotx.tv^
+||appnexus.com^
+||conversantmedia.com^
+||tribalfusion.com^
+||yieldmanager.com^
+||yieldmanager.net^
+||advertising.com^
+||adform.net^
+||adform.com^
+||2mdn.net^
+||moatads.com^
+||moat.com^
+||adsafeprotected.com^
+||lijit.com^
+||zergnet.com^
+||trafficjunky.net^
+||media.net^
+||sharethrough.com^
+||revcontent.com^
+||mgid.com^
+||gumgum.com^
+||undertone.com^
+||indexexchange.com^
+||pubmatic.com^
+||sovrn.com^
+||sonobi.com^
+||triplelift.com^
+||criteo.com^
+||33across.com^
+||openx.com^
+||liveintent.com^
+||improvedigital.com^
+||adtelligent.com^
+||emxdgt.com^
+||contextweb.com^
+||rhythmone.com^
+||yieldmo.com^
+||kargo.com^
+||teads.tv^
+||nativo.com^
+||connatix.com^
+||smartclip.net^
+||spotxchange.com^
+||freewheel.tv^
+||innovid.com^
+||videologygroup.com^
+||iponweb.net^
+||advertising.com^
+||turn.com^
+||adcolony.com^
+||ironsrc.com^
+||verizonmedia.com^
+||oath.com^
+
+! --- CNAME Tracking (rastreo mediante CNAME) ---
+! Estas técnicas evitan el bloqueo usando subdominios propios
+||analytics.*/tr/*
+||metrics.*/collect/*
+||track.*/pixel*
+
+
+
+! ============================================================
+! WHITELIST — EVITAR FALSOS POSITIVOS
+! ============================================================
+
+! YouTube — funcionalidad básica
+@@||youtube.com/youtubei/v1/player?$xmlhttprequest,domain=youtube.com
+@@||youtube.com/get_video_info$xmlhttprequest,domain=youtube.com
+@@||youtube.com/youtubei/v1/player/get_storyboard$xmlhttprequest,domain=youtube.com
 @@||googlevideo.com/videoplayback*$media,domain=youtube.com,~third-party
-@@||spclient.wg.spotify.com^$xmlhttprequest,domain=open.spotify.com,~third-party
 
-! ========== ELEMENTOS ADICIONALES ==========
+! Spotify — funcionalidad básica (reproducción, listas, usuario)
+@@||spclient.wg.spotify.com/melody/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/playplay/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/storage-resolve/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/user/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/playlist/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/color-lyrics/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/podcast-playback/*$xmlhttprequest,domain=open.spotify.com
+@@||spclient.wg.spotify.com/canvaz-cache/*$xmlhttprequest,domain=open.spotify.com
 
-! Botones de "Premium" y promociones
-youtube.com##ytd-button-renderer:has-text(/Premium|Suscr/)
-open.spotify.com##button[data-testid*="premium"]
-open.spotify.com##div[class*="UpgradeButton"]
-
-! Comentarios de filtros para debugging
-! Para verificar que los filtros funcionan, abre la consola de desarrollador
-! y busca recursos bloqueados en la pestaña de Red/Network
+! Servicios de crash reporting en sus propios dominios (legítimos)
+@@||sentry.io^$domain=sentry.io
+@@||bugsnag.com^$domain=bugsnag.com
